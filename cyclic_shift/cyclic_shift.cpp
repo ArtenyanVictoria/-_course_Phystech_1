@@ -32,10 +32,14 @@ int main(int argc, char *argv[])
     int k;
     std::cin >> k;
 
-    k = k % n;
     if (k < 0)
     {
-        k = k + n;
+        k = abs(k) % n;
+        k = n - k;
+    }
+    else
+    {
+        k = k % n;
     }
 
     int l1 = 0, r1 = n - k - 1;
